@@ -1,0 +1,17 @@
+[
+  { "name": "Mortgage", "amount": 1450, "type": "monthly", "day": 1 },
+  { "name": "Electric", "amount": 160, "type": "monthly", "day": 9 },
+  { "name": "Phone", "amount": 72, "type": "monthly", "day": 11 },
+  { "name": "Student Loan", "amount": 320, "type": "monthly", "day": 15 },
+  { "name": "Subscriptions", "amount": 18.50, "type": "monthly", "day": 20 },
+  { "name": "Trash Service", "amount": 35, "type": "monthly", "day": 25 },
+  { "name": "Groceries", "amount": 95, "type": "weekly", "day": 0 },
+  { "name": "Gas", "amount": 30, "type": "weekly", "day": 4 },
+  {
+    "name": "PAYCHECK",
+    "amount": 1625.75,
+    "type": "bi-weekly",
+    "day": 4,
+    "lastDate": "2026-01-01"
+  }
+]

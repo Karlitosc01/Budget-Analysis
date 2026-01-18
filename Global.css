@@ -1,0 +1,319 @@
+body{
+  background-color: #FFE9C0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  margin: 0;
+  padding: 10px;
+}
+
+:root {
+    --bg-color: #FFE9C0;
+    --card-bg: #ACB4A0;
+    --accent: #666340;
+    --text: #1f2937;
+    --text2: #fff;
+}
+
+h1{
+  font-family: Arial;
+  text-align: center;
+  font-size: 50px;
+  border-bottom: 2px solid;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0px 0px 15px 0px;
+}
+
+h2 { 
+  margin: 0 0 10px 0; font-size: 1.2rem; 
+  /* min: 1rem, scalable: 2.5vw, max: 1.5rem */
+  font-size: clamp(1rem, 2.5vw, 1.5rem); 
+  padding-bottom: 10px;
+  text-shadow: 2px 2px #ccc;
+}
+
+h2.shadowh2 {
+    text-shadow: 2px 2px #000;
+}
+
+
+h3 {
+  font-size: 1.0rem;
+  color: #000;
+}
+
+p { 
+  margin: 0; opacity: 0.8; font-size: 0.9rem; 
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  padding: 2px 0px 2px 0px;
+}
+
+td, th{
+  border: 1px solid #000;
+  padding: 0px;
+}
+table{
+  width: 100%;
+  table-layout: fixed; /* Forces the table to stay within the card width */
+  word-wrap: break-word; /* Prevents long text from stretching the table */
+  font-size: 0.8rem; /* Start small for mobile */
+}
+
+.padding1th{
+  padding: 10px;
+}
+
+.spacing-bottom{
+  padding-bottom: 10px;
+}
+
+/* On bigger screens, make table text bigger */
+@media (min-width: 768px) {
+  table { font-size: 1rem; }
+}
+
+/* 1. MOBILE FIRST: Default is a single column stack */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+/* 2. TABLET/DESKTOP: Expand layout when screen is wider */
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(4, 1fr);
+        /* Changed from 200px to auto or a flexible minmax */
+        grid-auto-rows: minmax(150px, auto);
+    }
+}
+
+/* Card Code*/
+.card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    transition: transform 0.2s ease;
+}
+.card:hover { 
+  transform: translateY(-5px); 
+}
+.card.tall {
+    grid-row: span 2;
+    max-height: 500px; /* Adjust this number to match roughly two grid rows */
+    overflow: hidden; /* Prevents the card itself from growing */
+}
+
+/* Scroll Container - Upcoming Bills */
+.scroll-container {
+    flex-grow: 1;
+    height: 200px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-top: 15px;
+    background: transparent;
+    scroll-behavior: smooth;
+
+    /* Firefox */
+    scrollbar-width: 10px;
+    scrollbar-color: var(--accent) transparent;
+}
+
+        /* WebKit Scrollbars */
+.scroll-container::-webkit-scrollbar {
+    width: 10px;
+}
+.scroll-container::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 10px;
+}
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #4a482e;
+}
+
+/* Scroll Container - Expense Review Card */
+.scroll-container2 {
+    flex-grow: 1;
+    height: 200px;
+    max-height: 200px; /* Adjust this number to match roughly two grid rows */
+    overflow: hidden; /* Prevents the card itself from growing */
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-top: 15px;
+    background: transparent;
+    scroll-behavior: smooth;
+
+    /* Firefox */
+    scrollbar-width: 10px;
+    scrollbar-color: var(--accent) transparent;
+}
+        /* WebKit Scrollbars */
+.scroll-container2::-webkit-scrollbar {
+    width: 10px;
+}
+.scroll-container2::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+.scroll-container2::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 10px;
+}
+.scroll-container2::-webkit-scrollbar-thumb:hover {
+    background-color: #4a482e;
+}
+
+/* Sizing Logic for desktop */
+@media (min-width: 768px) {
+    .hero    { grid-column: span 2; grid-row: span 1; background: var(--accent); color: var(--text2);}
+    .wide    { grid-column: span 2; }
+    .tall    { grid-row: span 2; }
+    .standard { grid-column: span 1; }
+    .card { padding: 24px; /* <--- Add this: It switches back to 24px on Desktop */}
+}
+
+/* Loading Bar */
+.gray-bar {
+    width: 100%;
+    background-color: #FFE9C0;
+    height: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.blue-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #6366f1; /* Your preferred blue */
+    border-radius: 10px;
+    transition: width 0.5s, background-color 0.3s;
+}
+
+/* Loading Bar - Status Java Updates*/
+.blue-fill[data-status="warning"] {
+    background-color: #f59e0b; /* Orange */
+}
+.blue-fill[data-status="danger"] {
+    background-color: #ef4444; /* Red */
+}
+.blue-fill[data-status="healthy"] {
+    background-color: dodgerblue; /* Your original blue */
+}
+
+/* Buttons */
+.button {
+    background-color: #FFE9C0;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button2 {
+        background-color: #FFE9C0;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+    
+}
+
+button:hover {
+    filter: brightness(0.9);
+    background-color: #000;
+    color: #fff;
+}
+
+/* Bills Section */
+.label {
+  font-size: 0.9rem;
+}
+.form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    border-bottom: #000 solid 1px;
+}
+
+.form2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    justify-content: center;
+}
+.num-input {
+    width: auto;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+    font-family: inherit;
+    background-color: #FFE9C0;
+    font-style: italic;
+    text-align: center;
+}
+.num-input2 {
+  width: 100%;
+}
+
+/* Text Field - For Chrome, Safari, Edge, and Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Text Field - For Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/*        Upcoming Bills Card         */
+.upcoming-bill-item {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+#custom-range {
+  display: flex;
+  gap: 60px;
+}
+select.num-input {
+    width: auto;
+    margin-bottom: 10px;
+    background-color: var(--bg-color);
+}
+.total-display {
+    margin-top: auto; /* Pushes the total to the very bottom of the card */
+    padding-top: 15px;
+    font-weight: bold;
+    border-bottom: #000 solid 2px;
+}

@@ -1,0 +1,21 @@
+[
+  { "name": "Rent Due", "amount": 689, "type": "monthly", "day": 1 },
+  { "name": "Spotify", "amount": 12.71, "type": "monthly", "day": 3 },
+  { "name": "ATT", "amount": 56, "type": "monthly", "day": 3 },
+  { "name": "Google One", "amount": 2.13, "type": "monthly", "day": 9 },
+  { "name": "Geico", "amount": 355, "type": "monthly", "day": 10 },
+  { "name": "Freedom Debt", "amount": 292, "type": "monthly", "day": 17 },
+  { "name": "Duke", "amount": 85, "type": "monthly", "day": 18 },
+  { "name": "Corolla", "amount": 398, "type": "monthly", "day": 21 },
+  { "name": "Visible", "amount": 35, "type": "monthly", "day": 22 },
+  { "name": "FCU Service Fee", "amount": 9.95, "type": "monthly", "day": 30 },
+  { "name": "Groceries", "amount": 90, "type": "weekly", "day": 3 },
+  { "name": "Gas", "amount": 28, "type": "weekly", "day": 5 },
+  {
+    "name": "PAYCHECK",
+    "amount": 1546.43,
+    "type": "bi-weekly",
+    "day": 5,
+    "lastDate": "2026-01-02"
+  }
+]

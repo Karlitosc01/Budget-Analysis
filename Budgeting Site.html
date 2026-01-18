@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Budget Analysis</title>
+    <link rel="stylesheet" href="Global.css">
+    <link rel="stylesheet" href="main_style.css">
+    <script src="java_main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Budget Analysis</h1>
+    <div class="bento-grid">
+
+        <!--Your Keep Card-->
+        <div class="card hero">
+          <div >
+              <h2 class="shadowh2">Your Keep</h2>
+              <div class="gray-bar">
+                  <div id="myFill" class="blue-fill"></div>
+              </div>
+              <p id="label" class="padding1th">0%</p>
+                                     
+          </div>
+        </div>
+
+        <!-- Stat 1 Card-->
+      <div class="card standard">
+            <h2>Stat 1</h2>
+            <p>10k+ Users</p>
+        </div>
+
+        <!--Expense Review Card-->
+      <div class="card standard" style="grid-row: span 2; background-color: var(--card-bg);">
+          <h2>Expense Review</h2>
+          <form class="form">
+            <label style="padding-right: 10px;">Spendable:</label>
+                  <input type="number" id="quantity1" class="num-input num-input2">
+          </form> 
+          <div class="scroll-container2">
+          <div class="form-group">
+              <input type="number" id="bill-one" class="num-input num-input2">
+          </div>
+          <div class="form-group">
+              <input type="number" id="bill-two" class="num-input num-input2">
+          </div>
+          <div class="form-group">
+              <input type="number" id="bill-three" class="num-input num-input2">
+          </div>
+          <div class="form-group">
+              <input type="number" id="bill-four" class="num-input num-input2">
+          </div>
+          <div class="form-group">
+              <input type="number" id="bill-five" class="num-input num-input2">
+          </div>
+          <div class="form-group">
+              <input type="number" id="bill-six" class="num-input num-input2">
+          </div>
+          <div class="form-group">
+              <input type="number" id="bill-seven" class="num-input num-input2">
+          </div>
+          </div>
+
+          <form class="form2">
+            <label style="padding-right: 10px;">Spendable:</label>
+                <p style="padding-right: 10px; font-style: italic;">Numbers Here From Upcoming Bills</p>  
+                <button type="button" class="button2">Update</button>
+          </form> 
+
+          <button type="button" class="button" style="margin-top: 20px;" onclick="calculateBudget()">Update All</button>
+      </div>
+
+      <!-- Upcoming Bills Card-->
+      <div class="card tall">
+            <h2>Upcoming Bills</h2>
+            <select id="days-limit" onchange="displayUpcomingBills()" class="num-input">
+                      <option value="7">7 Days</option>
+                      <option value="14">14 Days</option>
+                      <option value="30" selected>30 Days</option>
+                      <option value="custom">Custom</option>
+            </select>
+            <div id="custom-range" class="form-group" style="display: none;">
+                <input type="date" id="start-date" class="num-input" onchange="displayUpcomingBills()">
+                <input type="date" id="end-date" class="num-input" onchange="displayUpcomingBills()">
+
+            </div>
+
+
+            <div id="bill-list-container" class="scroll-container">
+            </div>
+            
+            <div id="upcoming-total" class="total-display">
+                Total Needed: $0.00
+            </div>
+      </div>
+
+      <!-- Lastest Updates Card -->
+      <div class="card wide">
+        <h2 style="text-align: center;">Latest Updates</h2>
+        <h3>Weekly Expenses</h3>
+        <p>- Gas: $28 per week | $112 per month | $1,568 per year</p>
+        <p>- Groceries: $90 per week | $360 per month | $5,040 per year</p>
+      </div>
+
+      <!-- Monthly Bills Upload Card -->
+        <div class="card standard">
+            <h2>Upload Bills</h2>
+
+            <p style="margin-bottom: 10px;">
+                Upload your bills file (CSV or JSON).
+            </p>
+
+            <input
+                type="file"
+                id="bills-file"
+                accept=".csv,.json"
+                onchange="handleBillsUpload(event)"
+            >
+
+            <p id="upload-status" style="font-size: 0.8rem; margin-top: 10px;"></p>
+        </div>
+
+
+      <!-- Links Card -->
+        <div class="card standard">
+            <h2> Link Card</h2>
+
+        </div>
+
+      <!-- Links Card -->
+        <div class="card standard" style="grid-row: span 2;">
+            <h2> Link Card</h2>
+
+        </div>
+
+      <!-- Links Card -->
+        <div class="card standard" style="grid-row: span 1;">
+            <h2> Link Card</h2>
+
+        </div>
+
+      <!-- Links Card -->
+        <div class="card standard" style="grid-row: span 1;">
+            <h2> Link Card</h2>
+
+        </div>
+
+      <!-- Links Card -->
+        <div class="card standard" style="grid-row: span 1;">
+            <h2> Link Card</h2>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

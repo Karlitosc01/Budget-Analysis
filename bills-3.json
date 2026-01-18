@@ -1,0 +1,17 @@
+[
+  { "name": "Rent", "amount": 1100, "type": "monthly", "day": 1 },
+  { "name": "Water", "amount": 48, "type": "monthly", "day": 6 },
+  { "name": "Internet", "amount": 95, "type": "monthly", "day": 10 },
+  { "name": "Car Insurance", "amount": 210, "type": "monthly", "day": 14 },
+  { "name": "Gym", "amount": 45, "type": "monthly", "day": 18 },
+  { "name": "Streaming Bundle", "amount": 27.99, "type": "monthly", "day": 22 },
+  { "name": "Groceries", "amount": 120, "type": "weekly", "day": 6 },
+  { "name": "Gas", "amount": 40, "type": "weekly", "day": 2 },
+  {
+    "name": "PAYCHECK",
+    "amount": 1750,
+    "type": "bi-weekly",
+    "day": 5,
+    "lastDate": "2026-01-03"
+  }
+]
